@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap");
 :root {
-  --primary-font: "Roboto", sans-serif;
+  --primary-font: "Montserrat", sans-serif;
 }
 * {
   padding: 0;
@@ -161,7 +161,7 @@ img:not([src]) {
   padding: 0 15px 0 0px;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Roboto";
+  font-family: "Montserrat";
   z-index: 98;
   color: var(--font-color);
   background-color: var(--searchbar-bg-color);
@@ -1693,7 +1693,7 @@ input[type="radio"]:checked + .btnLabel {
     border-radius: 20px;
     margin-right: 0px;
   }
-  .menuSection,
+  
   .rightSection,
   .compactSidebar,
   .userSection > span,

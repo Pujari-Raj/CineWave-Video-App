@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-
 import Body from "./components/Body";
 import Header from "./components/Header";
+import { Provider } from "react-redux";
+import  store  from "./utilities/store";
+import Sidebar from "./components/Sidebar";
 
 const AppLayout = () => {
+
+  const [theme, setTheme] = useState(
+    localStorage.getItem("themeMode") || "lightTheme"
+  );
+
+  useEffect(() => {
+    document.body.className = localStorage.getItem("themeMode") || "lightTheme";
+  }, [theme])
+  
+
+
   return (
     <>
-    <h1>demo</h1>
-    <Outlet/>
+     <Provider store={store}>
+     <Header theme={theme} setTheme={setTheme} />
+     <Sidebar theme={theme} />
+     </Provider>
+
+    {/* <Outlet/> */}
   </>
   );
 };
