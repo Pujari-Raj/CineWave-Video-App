@@ -4,30 +4,26 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import { Provider } from "react-redux";
-import  store  from "./utilities/store";
+import store from "./utilities/store";
 import Sidebar from "./components/Sidebar";
 
 const AppLayout = () => {
-
   const [theme, setTheme] = useState(
     localStorage.getItem("themeMode") || "lightTheme"
   );
 
   useEffect(() => {
     document.body.className = localStorage.getItem("themeMode") || "lightTheme";
-  }, [theme])
-  
-
+  }, [theme]);
 
   return (
     <>
-     <Provider store={store}>
-     <Header theme={theme} setTheme={setTheme} />
-     <Sidebar theme={theme} />
-     </Provider>
-
-    {/* <Outlet/> */}
-  </>
+      <Provider store={store}>
+        <Header theme={theme} setTheme={setTheme} />
+        <Sidebar theme={theme} />
+        <Outlet />
+      </Provider>
+    </>
   );
 };
 
@@ -37,8 +33,8 @@ const appRouter = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        path: "/main",
-        element: <Body/>,
+        path: "/",
+        element: <Body />,
       },
       // {
       //   path: "/watch",
@@ -81,7 +77,7 @@ const appRouter = createBrowserRouter([
       // },
     ],
   },
-])
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
