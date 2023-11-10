@@ -7,7 +7,7 @@ import { SortSVG } from "../utilities/SVG";
 
 const CommentSection = ({ videoTitle, videoID, comments }) => {
   const [commentData, setCommentData] = useState([]);
-  const [nextPageToken, setNextPageToken] = useState("");
+  const [nextPageToken, setNextPageToken] = useState(""); 
   const [commentState, setCommentState] = useState(true);
   const [isCommentLoading, setIsCommentLoading] = useState(false);
   const [commentType, setCommentType] = useState("relevance");
@@ -40,6 +40,7 @@ const CommentSection = ({ videoTitle, videoID, comments }) => {
 
   return (
     <>
+    {/* CommentState for Tablet,Phone(Device) */}
       <div
         className="commentToggle"
         onClick={() => setCommentState(!commentState)}
@@ -126,7 +127,7 @@ const CommentSection = ({ videoTitle, videoID, comments }) => {
                   }}
                   className="loadMoreBtn"
                 >
-                  Load more comments
+                  Load more Comments
                 </div>
               </div>
             ) : (
