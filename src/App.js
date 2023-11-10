@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Body from "./components/Body";
 import Header from "./components/Header";
+import VideoPage from "./components/VideoPage";
 import { Provider } from "react-redux";
 import store from "./utilities/store";
 import Sidebar from "./components/Sidebar";
@@ -36,10 +37,10 @@ const appRouter = createBrowserRouter([
         path: "/",
         element: <Body />,
       },
-      // {
-      //   path: "/watch",
-      //   element: <VideoPage />,
-      // },
+      {
+        path: "/watch",
+        element: <VideoPage />,
+      },
       // {
       //   path: "/results",
       //   element: <SearchPage />,

@@ -106,6 +106,7 @@ const Body = () => {
     });
   };
 
+  // fetching videos based on different filter
   const fetchFilteredVideos = () => {
     useFetch(
       `search?part=snippet&type=video&maxResults=15&q=${currentFilter}&pageToken=${pageToken}&videoDuration=medium`
@@ -116,7 +117,7 @@ const Body = () => {
     });
   };
 
-  console.log(pageToken);
+  // console.log(pageToken);
   return (
     <div id="mainBody">
       <div className="filtersContainer">

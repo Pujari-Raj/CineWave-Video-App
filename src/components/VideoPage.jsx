@@ -5,6 +5,7 @@ import { addVideo, removeVideo } from "../utilities/librarySlice";
 import { addBackdrop, closeNav, openNav } from "../utilities/sidebarSlice";
 import { calculateViews, calculateTime } from "../utilities/useMathHelpers";
 import useTitle from "../utilities/useTitle";
+import CommentSection from "../components/CommentSection";
 import {
   DislikeSVG,
   SaveSVG,
@@ -12,6 +13,7 @@ import {
   MenuSVG,
   ShareSVG,
 } from "../utilities/SVG";
+import RecommendedVideos from "./RecommendedVideos";
 
 // ReadMore
 
@@ -41,7 +43,7 @@ const VideoPage = () => {
   const smScreen = window.matchMedia("(max-width: 899px)");
   const fullScreen = window.matchMedia("(min-width: 1200px)");
   const navState = useSelector((store) => store.sidebar.navState);
-  const watchLater =  useSelector((store) => store?.library?.watchLater);
+  const watchLater = useSelector((store) => store?.library?.watchLater);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -71,7 +73,7 @@ const VideoPage = () => {
     );
     const videoData = await dataVideo.json();
     setVideoData(videoData?.items[0]);
-    console.log("videoData ->"+videoData);
+    console.log("videoData ->" + videoData);
     const channelId = videoData?.items[0]?.snippet?.channelId;
     const dataChannel = await fetch(
       `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2Cstatistics&id=${channelId}&key=${apiKey}`
@@ -155,7 +157,9 @@ const VideoPage = () => {
           </div>
           <div className="videoDescriptionBox">
             <div className="infoLine">
-              <div>{calculateViews(videoData?.statistics?.viewCount)} views</div>
+              <div>
+                {calculateViews(videoData?.statistics?.viewCount)} views
+              </div>
               <div>{calculateTime(videoData?.snippet?.publishedAt)}</div>
               <div className="videoTags"></div>
             </div>
@@ -178,8 +182,16 @@ const VideoPage = () => {
               )}
             </div>
           </div>
-          
+          <CommentSection
+            videoTitle={videoData?.snippet?.channelTitle}
+            videoID={videoID}
+            comments={videoData?.statistics?.commentCount}
+          />
         </div>
+        <RecommendedVideos
+          videoID={videoID}
+          title={videoData?.snippet?.title}
+        />
       </div>
     </>
   );

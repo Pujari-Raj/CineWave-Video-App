@@ -213,7 +213,7 @@ const Sidebar = ({ theme }) => {
           </div>
         </Link>
       </div>
-      {/* --------------------Compact Sidebar------------------- */}
+      {/* --------------------Compact-Sidebar------------------- */}
       <div className="compactSidebar">
         <Link to="/" className="textNone">
           <div className="csItems">
