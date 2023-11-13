@@ -7,6 +7,8 @@ import VideoPage from "./components/VideoPage";
 import { Provider } from "react-redux";
 import store from "./utilities/store";
 import Sidebar from "./components/Sidebar";
+import WatchLaterPage from "./components/WatchLaterPage";
+import SearchResult from "./components/SearchResult";
 
 const AppLayout = () => {
   const [theme, setTheme] = useState(
@@ -41,10 +43,14 @@ const appRouter = createBrowserRouter([
         path: "/watch",
         element: <VideoPage />,
       },
-      // {
-      //   path: "/results",
-      //   element: <SearchPage />,
-      // },
+      {
+        path:"/watchLater",
+        element: <WatchLaterPage/>
+      },
+      {
+        path: "/results",
+        element: <SearchResult />,
+      },
       // {
       //   path: "/resSearch",
       //   element: <ResSearchPage />,

@@ -43,7 +43,7 @@ const VideoPage = () => {
   const smScreen = window.matchMedia("(max-width: 899px)");
   const fullScreen = window.matchMedia("(min-width: 1200px)");
   const navState = useSelector((store) => store.sidebar.navState);
-  const watchLater = useSelector((store) => store?.library?.watchLater);
+  const watchlater  = useSelector((store) => store?.library?.watchlater);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -142,13 +142,13 @@ const VideoPage = () => {
                 className="videoBtn btn"
                 id="saveBtn"
                 onClick={() => {
-                  watchLater?.includes(videoData?.id)
+                  watchlater?.includes(videoData?.id)
                     ? dispatch(removeVideo(videoData?.id))
                     : dispatch(addVideo(videoData?.id));
                 }}
               >
                 <SaveSVG />
-                {watchLater?.includes(videoData?.id) ? "Unsave" : "Save"}
+                {watchlater?.includes(videoData?.id) ? "Unsave" : "Save"}
               </div>
               <div className="videoBtn btn" id="menuBtn">
                 <MenuSVG />

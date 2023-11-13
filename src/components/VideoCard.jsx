@@ -11,7 +11,7 @@ import {
 } from "../utilities/useMathHelpers";
 
 const VideoCard = ({ info }) => {
-  const watchLater = useSelector((store) => store?.library?.watchLater);
+  const watchlater  = useSelector((store) => store?.library?.watchlater);
   const dispatch = useDispatch();
 
   const [channelIcon, setChannelIcon] = useState();
@@ -101,7 +101,10 @@ const VideoCard = ({ info }) => {
         </div>
         <div
           className="vdOptionBtn"
-          onClick={() => setWatchLaterBtn(!watchLaterBtn)}
+          onClick={() => {
+            // console.log("watchlater btn clicked");
+            setWatchLaterBtn(!watchLaterBtn)
+          }}
         >
           <DotsSVG />
         </div>
@@ -111,7 +114,7 @@ const VideoCard = ({ info }) => {
             <div
               className="themeBoxMode"
               onClick={() => {
-                watchLater?.includes(
+                watchlater?.includes(
                   info?.id?.videoId ? info?.id?.videoId : info?.id
                 )
                   ? dispatch(
@@ -126,7 +129,7 @@ const VideoCard = ({ info }) => {
               }}
             >
               <ClockSVG />
-              {!watchLater?.includes(
+              {!watchlater?.includes(
                 info?.id?.videoId ? info?.id?.videoId : info?.id
               )
                 ? "Save to Watch later"
