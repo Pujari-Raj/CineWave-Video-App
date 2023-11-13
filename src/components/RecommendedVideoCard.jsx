@@ -11,7 +11,7 @@ import { ShareSVG, DotsSVG, ClockSVG } from "../utilities/SVG";
 import { useDispatch, useSelector } from "react-redux";
 
 const RecommendedVideoCard = (data) => {
-  const watchLater = useSelector((store) => store?.library?.watchLater);
+  const watchlater  = useSelector((store) => store?.library?.watchlater);
   const [btnState, setBtnState] = useState(false);
   const [videoData, setVideoData] = useState(null);
   const dispatch = useDispatch();

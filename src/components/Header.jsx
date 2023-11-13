@@ -2,8 +2,10 @@ import React, { useEffect, useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleNavState } from "../utilities/sidebarSlice";
+import { addQuery } from "../utilities/searchSlice";
 import lightBtn from "../assets/light.svg";
 import darkBtn from "../assets/dark.svg";
+import useFetch from '../utilities/useFetch'
 import {
   SearchSVG,
   LogoLight,
@@ -17,7 +19,7 @@ import {
 
 const Header = ({ theme, setTheme }) => {
   const dispatch = useDispatch(); //for sideNav state change
-  // const suggestionsCache = useSelector((store) => store.suggestionsCache);
+  const suggestionsCache = useSelector((store) => store.suggestionsCache);
 
   const toggleNavHandler = () => {
     dispatch(toggleNavState());
@@ -37,7 +39,28 @@ const Header = ({ theme, setTheme }) => {
     ></div>
   );
 
-  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      suggestionsCache[searchQuery]
+        ? setSuggestions(suggestionsCache[searchQuery])
+        : fetchResults();
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [searchQuery]);
+
+  const fetchResults = useCallback(() => {
+    useFetch(
+      `search?client=chrome&ds=yt&q=${searchQuery}`,
+      `https://corsproxy.io/?http://suggestqueries.google.com/complete`
+    ).then((data) => {
+      dispatch(addQuery({ [searchQuery]: data[1] }));
+      setSuggestions(data[1]);
+    });
+  }, [searchQuery]);
+
+
 
   return (
     <div className="header">
@@ -108,7 +131,7 @@ const Header = ({ theme, setTheme }) => {
                   </Link>
                 ))}
               </div>
-              {/* {backdrop} */}
+              {backdrop}
             </>
           )}
           <div className="searchBtn" onClick={() => setSearchState(false)}>

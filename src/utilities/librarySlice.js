@@ -16,7 +16,7 @@ const librarySlice = createSlice({
         state.watchlater = state.watchlater.filter(
             (item) => item!= action.payload,
         );
-        localStorage.getItem("watchlaterdata", JSON.stringify(state.watchlater));
+        localStorage.setItem("watchlaterdata", JSON.stringify(state.watchlater));
     },
     clearVideos:(state, action) => {
         state.watchlater = [];
