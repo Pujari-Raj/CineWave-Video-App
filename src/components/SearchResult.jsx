@@ -81,13 +81,15 @@ const SearchResult = () => {
   }, []);
 
   useEffect(() => {
-    useFetch(`search?type=channel&type=video&maxResults=15&q=${keyword}`).then(
-      (data) => {
+    setTimeout(() => {
+      useFetch(
+        `search?type=channel&type=video&maxResults=15&q=${keyword}`
+      ).then((data) => {
         // console.log(data?.items);
         setSearchData(data?.items);
         setPageToken(data?.nextPageToken);
-      }
-    );
+      });
+    }, 2000);
   }, [text]);
 
   const fetchNextResults = () => {

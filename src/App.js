@@ -9,6 +9,7 @@ import store from "./utilities/store";
 import Sidebar from "./components/Sidebar";
 import WatchLaterPage from "./components/WatchLaterPage";
 import SearchResult from "./components/SearchResult";
+import MobileSearchPage from "./components/MobileSearchPage";
 
 const AppLayout = () => {
   const [theme, setTheme] = useState(
@@ -51,10 +52,10 @@ const appRouter = createBrowserRouter([
         path: "/results",
         element: <SearchResult />,
       },
-      // {
-      //   path: "/resSearch",
-      //   element: <ResSearchPage />,
-      // },
+      {
+        path: "/resSearch",
+        element: <MobileSearchPage />,
+      },
       // {
       //   path: "/watchLater",
       //   element: <WatchLaterPage />,
