@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Body from "./components/Body";
@@ -10,6 +10,8 @@ import Sidebar from "./components/Sidebar";
 import WatchLaterPage from "./components/WatchLaterPage";
 import SearchResult from "./components/SearchResult";
 import MobileSearchPage from "./components/MobileSearchPage";
+import ChannelPage from "./pages/ChannelPage";
+import ChannelHomePage from "./pages/ChannelHomePage";
 
 const AppLayout = () => {
   const [theme, setTheme] = useState(
@@ -45,8 +47,8 @@ const appRouter = createBrowserRouter([
         element: <VideoPage />,
       },
       {
-        path:"/watchLater",
-        element: <WatchLaterPage/>
+        path: "/watchLater",
+        element: <WatchLaterPage />,
       },
       {
         path: "/results",
@@ -56,33 +58,29 @@ const appRouter = createBrowserRouter([
         path: "/resSearch",
         element: <MobileSearchPage />,
       },
-      // {
-      //   path: "/watchLater",
-      //   element: <WatchLaterPage />,
-      // },
-      // {
-      //   path: "/channel/:channelId",
-      //   element: (
-      //     <Suspense>
-      //       <ChannelPage />
-      //     </Suspense>
-      //   ),
-      //   children: [
-      //     {
-      //       path: "/channel/:channelId/",
-      //       element: <ChannelHomePage />,
-      //     },
-      //     {
-      //       path: "/channel/:channelId/playlists",
-      //       element: <ChannelPlaylist />,
-      //     },
-      //     {
-      //       path: "/channel/:channelId/playlists/:playlistId",
-      //       element: <VideoPlaylist />,
-      //     },
-      //     { path: "/channel/:channelId/about", element: <ChannelAbout /> },
-      //   ],
-      // },
+      {
+        path: "/channel/:channelId",
+        element: (
+          <Suspense>
+            <ChannelPage />
+          </Suspense>
+        ),
+        children: [
+          {
+            path: "/channel/:channelId/",
+            element: <ChannelHomePage />,
+          },
+          // {
+          //   path: "/channel/:channelId/playlists",
+          //   element: <ChannelPlaylist />,
+          // },
+          // {
+          //   path: "/channel/:channelId/playlists/:playlistId",
+          //   element: <VideoPlaylist />,
+          // },
+          // { path: "/channel/:channelId/about", element: <ChannelAbout /> },
+        ],
+      },
     ],
   },
 ]);

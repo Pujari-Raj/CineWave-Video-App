@@ -24,7 +24,6 @@ const VideoCard = ({ info }) => {
       (data) =>
         setChannelIcon(data?.items[0]?.snippet?.thumbnails?.default?.url)
     );
-
     if (!info?.statistics) {
       useFetch(
         `videos?part=statistics%2CcontentDetails&id=${info?.id?.videoId}`
@@ -34,6 +33,9 @@ const VideoCard = ({ info }) => {
       });
     }
   }, [info]);
+
+  
+  // console.log("channel-data"+channelIcon);
 
   return (
     <div className="videoCard">

@@ -3,7 +3,7 @@ import HomePageShimmer from "./HomePageShimmer";
 import VideoCard from "./VideoCard";
 
 const HomePage = ({ videoData }) => {
-    console.log(videoData);
+    console.log("video=data-",videoData);
   return (
     <>
       <div className="videoCardInnerContainer">
