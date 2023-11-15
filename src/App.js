@@ -12,6 +12,9 @@ import SearchResult from "./components/SearchResult";
 import MobileSearchPage from "./components/MobileSearchPage";
 import ChannelPage from "./pages/ChannelPage";
 import ChannelHomePage from "./pages/ChannelHomePage";
+import ChannelPlaylists from "./components/ChannelPlaylists";
+import VideoPlaylists from "./components/VideoPlaylists";
+import AboutChannel from "./components/AboutChannel";
 
 const AppLayout = () => {
   const [theme, setTheme] = useState(
@@ -70,15 +73,17 @@ const appRouter = createBrowserRouter([
             path: "/channel/:channelId/",
             element: <ChannelHomePage />,
           },
-          // {
-          //   path: "/channel/:channelId/playlists",
-          //   element: <ChannelPlaylist />,
-          // },
-          // {
-          //   path: "/channel/:channelId/playlists/:playlistId",
-          //   element: <VideoPlaylist />,
-          // },
-          // { path: "/channel/:channelId/about", element: <ChannelAbout /> },
+          {
+            path: "/channel/:channelId/playlists",
+            element: <ChannelPlaylists/>
+          },
+          {
+            path: "/channel/:channelId/playlists/:playlistId",
+            element: <VideoPlaylists/>
+           },
+          { path: "/channel/:channelId/about", 
+           element: <AboutChannel/>
+          },
         ],
       },
     ],
