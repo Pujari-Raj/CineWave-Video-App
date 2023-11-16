@@ -7,6 +7,7 @@ import { calculateViews } from "../utilities/useMathHelpers";
 import useFetch from "../utilities/useFetch";
 import Spinner from "./Spinner";
 import SearchResultCard from "./SearchResultCard";
+import SearchResultShimmer from "./SearchResultShimmer";
 
 const ChannelBox = ({ chId }) => {
   const [info, setInfo] = useState();
@@ -48,6 +49,7 @@ const SearchResult = () => {
   const [searchData, setSearchData] = useState(null);
   const [pageToken, setPageToken] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [showShimmer, setShowShimmer] = useState(true);
 
   const navState = useSelector((store) => store.sidebar.navState);
   const backdropState = useSelector((store) => store.sidebar.backdropState);
@@ -88,8 +90,9 @@ const SearchResult = () => {
         // console.log(data?.items);
         setSearchData(data?.items);
         setPageToken(data?.nextPageToken);
+        setShowShimmer(false);
       });
-    }, 2000);
+    }, 5000);
   }, [text]);
 
   const fetchNextResults = () => {
@@ -106,7 +109,9 @@ const SearchResult = () => {
     <>
       <div id="searchBody">
         <div className="searchContainer">
-          {searchData?.length === 0 ? (
+          {showShimmer ? (
+            <SearchResultShimmer />
+          ) : searchData?.length === 0 ? (
             <div className="centerDiv">No search result found</div>
           ) : (
             searchData?.map((data) => {
