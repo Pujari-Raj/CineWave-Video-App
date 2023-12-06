@@ -60,14 +60,14 @@ const RecommendedVideoCard = (data) => {
           <div
             className="themeBoxMode"
             onClick={() => {
-              watchLater?.includes(data?.id?.videoId)
+              watchlater?.includes(data?.id?.videoId)
                 ? dispatch(removeVideo(data?.id?.videoId))
                 : dispatch(addVideo(data?.id?.videoId));
               setBtnState(false);
             }}
           >
             <ClockSVG />
-            {!watchLater?.includes(data?.id?.videoId)
+            {!watchlater?.includes(data?.id?.videoId)
               ? "Save to Watch later"
               : "Remove from Watch later"}
           </div>

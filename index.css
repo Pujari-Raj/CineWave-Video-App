@@ -222,6 +222,26 @@ img:not([src]) {
 .searchResultItems:hover {
   background-color: var(--very-light-grey);
 }
+
+.searchShimmerCardImg {
+  width: 49%;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.searchShimmerLines {
+  height: 20px;
+  width: 70%;
+  border-radius: 2px;
+  /* margin-top: -27px; */
+}
+
+.searchmidShimmerLines {
+  height: 20px;
+  width: 40%;
+  border-radius: 2px;
+  /* margin-top: -27px; */
+}
 .themeSwitch {
   display: none;
   width: 6%;
@@ -1693,7 +1713,7 @@ input[type="radio"]:checked + .btnLabel {
     border-radius: 20px;
     margin-right: 0px;
   }
-  
+
   .rightSection,
   .compactSidebar,
   .userSection > span,
@@ -1702,7 +1722,8 @@ input[type="radio"]:checked + .btnLabel {
   .videoDescBtns::-webkit-scrollbar,
   .videoBoxDesc,
   .bottomMenu,
-  .backdrop {
+  .backdrop,
+  .menuSection {
     display: none;
   }
   .vdOptionBtn {
