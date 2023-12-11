@@ -27,9 +27,7 @@
 
 # 🚀 [Cinewave] <a name="about-project"></a>
 
-> Built a Video Streaming app using React-JS, Redux, and TailwindCSS, incorporating seamless
-integration with the YouTube Live API to provide real-time video content.The integration with the YouTube Live API enables real-time updates and ensures that users have access
-to the latest video content.Elegant loading animations using Shimmer UI enhance the overall user experience. Users can effortlessly browse and stream videos from their favorite YouTube channels and playlists with a user-friendly
+> Built a Video Streaming app using React-JS, Redux, and TailwindCSS, incorporating seamlessintegration with the YouTube Live API to provide real-time video content.The integration with the YouTube Live API enables real-time updates and ensures that users have access to the latest video content.Elegant loading animations using Shimmer UI enhance the overall user experience. Users can effortlessly browse and stream videos from their favorite YouTube channels and playlists with a user-friendly
 interface and smooth navigation.
 
 
@@ -65,9 +63,7 @@ Features
 
 > 🌗 Dark/Light Mode: Experience a whole light (or dark) with a captivating Dark and Light mode feature. Seamlessly switch between the two themes with a beautiful animated icon that enhances the visual appeal of your browsing experience.
 
-<!-- - **[Swiggy Live APIs Integration]**
-- **[State Management]**
-- **[Shimmer UI]** -->
+
 
 <!-- ## 🚀 Live Demo <a name="live-demo"></a>
 
