@@ -63,15 +63,13 @@ Features
 
 > 🌗 Dark/Light Mode: Experience a whole light (or dark) with a captivating Dark and Light mode feature. Seamlessly switch between the two themes with a beautiful animated icon that enhances the visual appeal of your browsing experience.
 
-
-
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
 - Click on the below given link to get the preview.
 
- <a href="https://spring-flowers-school.vercel.app/">
+ <a href="https://cinewave-video-app.vercel.app/">
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
-</a> -->
+</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
