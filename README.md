@@ -43,9 +43,9 @@ Features
 
  ### 🎯 Key Features <a name="key-features"></a>
 
-> 🌏YouTube Live APIs Integration for generating data about restaurants: Leveraging live YouTube APIs, It delivers up-to-the-minute data on videos, empowering users with accurate and reliable information to make informed choices when selecting their preferred streaming options.
+> 🌏YouTube Live APIs Integration for generating data about videos: Leveraging live YouTube APIs, It delivers up-to-the-minute data on videos, empowering users with accurate and reliable information to make informed choices when selecting their preferred streaming options.
 
-> 📌Seamless Navigation: With React Router DOM, the app provides a smooth and intuitive navigation experience, enabling users to effortlessly explore different sections, from discovering different pages, exploring trending videos and discover seamless content.
+> 📌Seamless Navigation: With React Router DOM, the app provides a smooth and intuitive navigation experience, enabling users to effortlessly explore different sections, from discovering different pages to exploring trending videos and discovering seamless content.
 
 > 🔐State Management with Redux: It ensures a scalable and organized application state with Redux, streamlining data flow and providing a centralized management system for a seamless user experience.
 
@@ -65,7 +65,7 @@ Features
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Click on the below given link to get the preview.
+- Click on the below-given link to get the preview.
 
  <a href="https://cinewave-video-app.vercel.app/">
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
@@ -82,6 +82,6 @@ Features
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> "If you enjoy this project, I'd greatly appreciate your support. Consider sharing it with others who might find it useful. Your contribution helps me grow and improve. 🚀, Don't Hesitate for starring this GitHub repoistory! "
+> "If you enjoy this project, I'd greatly appreciate your support. Consider sharing it with others who might find it useful. Your contribution helps me grow and improve. 🚀, Don't Hesitate to star this GitHub repository! "
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
